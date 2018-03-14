@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
-import { Ziggy } from '../../resources/assets/js/ziggy';
-import route from '../../vendor/tightenco/ziggy/src/js/route';
+import { Ziggy } from '../../eribu-laravel/resources/assets/js/ziggy';
+import route from '../../eribu-laravel/vendor/tightenco/ziggy/src/js/route';
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 import User from '@/components/user';
 import App from './App'
