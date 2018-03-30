@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="src/vendor/MediaManager/js/|src/vendor/MediaManager/js/mixins/|src/vendor/MediaManager/js/modules/|**/node_modules/*|src/router/|src/vendor/MediaManager/js/packages/|config/|src/|build/|src/components/user/components/|**/bower_components/*|src/components/user/|**/*.min.js" kind="src" path=""/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="build"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="config"/>
+	<classpathentry excluding="**/bower_components/*|components/user/|**/node_modules/*|vendor/MediaManager/js/mixins/|vendor/MediaManager/js/modules/|router/|vendor/MediaManager/js/|components/user/components/|vendor/MediaManager/js/packages/|**/*.min.js" kind="src" path="src"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|components/|**/*.min.js" kind="src" path="src/components/user"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="src/components/user/components"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="src/router"/>
+	<classpathentry excluding="mixins/|modules/|**/bower_components/*|**/node_modules/*|packages/|**/*.min.js" kind="src" path="src/vendor/MediaManager/js"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="src/vendor/MediaManager/js/mixins"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="src/vendor/MediaManager/js/modules"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="src/vendor/MediaManager/js/packages"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
