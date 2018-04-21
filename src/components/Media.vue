@@ -29,7 +29,7 @@
             v-bind:file-list="fileList" 
             v-bind:on-change="listChanged" 
             v-bind:auto-upload="false" 
-            v-bind:list-type="picture"
+            list-type="picture"
             multiple> 
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">
