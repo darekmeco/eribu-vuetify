@@ -1,5 +1,5 @@
 import menu from './menu';
-import Users from "./components/Users";
+import Users from "./components/Users/Users.vue";
 import UsersForm from './components/UsersForm/UsersForm.vue';
 
 export default {

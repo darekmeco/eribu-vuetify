@@ -2,11 +2,11 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import {
     Ziggy
-} from '../../eribu-laravel/resources/assets/js/ziggy';
-import route from '../../eribu-laravel/vendor/tightenco/ziggy/src/js/route';
-import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+} from 'backend@/resources/assets/js/ziggy';
+import route from 'backend@/vendor/tightenco/ziggy/src/js/route';
+import 'vuetify/dist/vuetify.min.css';
 import User from '@/components/user';
-import App from './App.vue'
+import App from './App.vue';
 import router from './router';
 
 window.route = route;
@@ -20,12 +20,10 @@ Vue.use(Vuetify, {
         error: '#b71c1c'
     }
 });
-Vue.config.productionTip = false;
 
+Vue.config.productionTip = false;
 router.unionRoutes(User.routes);
 
-
-/* eslint-disable no-new */
 new Vue({
     el: '#app',
     router: router.getRouter(),

@@ -16,6 +16,7 @@
      data() {
          return {
              fileList: [],
+             remoteFileList: [],
              headers: [{
                      text: 'Id',
                      align: 'left',
@@ -99,6 +100,7 @@
          listChanged(file, fileList) {
              this.fileList = fileList;
              console.log('fileList: ', fileList);
+
          }
      }
 

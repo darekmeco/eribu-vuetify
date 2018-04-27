@@ -1,44 +1,68 @@
 <div class="hello">
-    <v-toolbar dense>
-        <v-toolbar-side-icon>
 
-        </v-toolbar-side-icon>
-        <v-toolbar-title>Title</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn v-bind:to="{name: 'users.create'}" icon>
-            <v-icon>search</v-icon>
-        </v-btn>
-        <v-btn icon>
-            <v-icon>search</v-icon>
-        </v-btn>
-        <v-btn icon>
-            <v-icon>favorite</v-icon>
-        </v-btn>
-        <v-btn icon>
-            <v-icon>more_vert</v-icon>
-        </v-btn>
-    </v-toolbar>
+    <v-flex sm10 offset-sm1>
+        <v-card>
+            <v-toolbar color="cyan" dark>
+                <v-toolbar-side-icon></v-toolbar-side-icon>
+                <v-toolbar-title>Inbox</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn icon>
+                    <v-icon>search</v-icon>
+                </v-btn>
+            </v-toolbar>
 
-    <el-upload class="upload-demo" drag v-bind:action="getStoreRoute()" v-bind:on-preview="handlePreview" v-bind:on-remove="handleRemove" v-bind:file-list="fileList" v-bind:on-change="listChanged" v-bind:auto-upload="false" list-type="picture" multiple>
-        <i class="el-icon-upload"></i>
-        <div class="el-upload__text">
-            Drop file here or
-            <em>click to upload</em>
-        </div>
-        <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
-    </el-upload>
+            <el-upload class="upload-demo" drag v-bind:action="getStoreRoute()" v-bind:on-preview="handlePreview" v-bind:on-remove="handleRemove" v-bind:file-list="fileList" v-bind:on-change="listChanged" v-bind:auto-upload="false" list-type="picture" multiple>
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">
+                    Drop file here or
+                    <em>click to upload</em>
+                </div>
+                <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
+            </el-upload>
 
+            <div class="headline text-xs-center pa-5"></div>
+            <v-bottom-nav absolute :value="true" color="transparent">
+                <v-btn flat color="teal" value="favorites">
+                    <span>Wyślij</span>
+                    <v-icon>backup</v-icon>
+                </v-btn>
 
-    <v-data-table v-bind:headers="headers" v-bind:items="fileList" hide-actions class="elevation-1"> <template slot="items" slot-scope="props">
-                <td>{{ props.item.uid }}</td>
-                <td>
-                    <img v-bind:src="props.item.url">
-                </td>
-                <td class="text-xs-left">{{ props.item.name }}</td>
-                <td class="text-xs-left">{{ props.item.percentage }}</td>
-                <td class="text-xs-left">{{ props.item.size }}</td>
-                <td class="text-xs-left">{{ props.item.status }}</td>
-            </template> </v-data-table>
-    <el-tree v-bind:data="data" v-bind:props="defaultProps" v-on:node-click="handleNodeClick"></el-tree>
+            </v-bottom-nav>
+
+        </v-card>
+    </v-flex>
+
+    <v-flex sm10 offset-sm1>
+        <v-card>
+            <v-toolbar color="cyan" dark>
+                <v-toolbar-side-icon></v-toolbar-side-icon>
+                <v-toolbar-title>Inbox</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn icon>
+                    <v-icon>search</v-icon>
+                </v-btn>
+            </v-toolbar>
+
+            <v-flex sm10 offset-sm1>
+
+                <v-data-table v-bind:headers="headers" v-bind:items="remoteFileList" hide-actions class="elevation-1">
+                    <div slot="items" slot-scope="props">
+                        <td>{{ props.item.uid }}</td>
+                        <td>
+                            <img v-bind:src="props.item.url">
+                        </td>
+                        <td class="text-xs-left">{{ props.item.name }}</td>
+                        <td class="text-xs-left">{{ props.item.percentage }}</td>
+                        <td class="text-xs-left">{{ props.item.size }}</td>
+                        <td class="text-xs-left">{{ props.item.status }}</td>
+                    </div>
+                </v-data-table>
+
+            </v-flex>
+
+            <el-tree v-bind:data="data" v-bind:props="defaultProps" v-on:node-click="handleNodeClick"></el-tree>
+        </v-card>
+
+    </v-flex>
 
 </div>
