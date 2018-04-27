@@ -85,6 +85,10 @@
          };
      },
      methods: {
+
+         submitUpload() {
+             this.$refs.upload.submit();
+         },
          getStoreRoute() {
              return route('api.media.store');
          },

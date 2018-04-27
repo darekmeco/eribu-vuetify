@@ -11,7 +11,7 @@
                 </v-btn>
             </v-toolbar>
 
-            <el-upload class="upload-demo" drag v-bind:action="getStoreRoute()" v-bind:on-preview="handlePreview" v-bind:on-remove="handleRemove" v-bind:file-list="fileList" v-bind:on-change="listChanged" v-bind:auto-upload="false" list-type="picture" multiple>
+            <el-upload ref="upload" class="upload-demo" drag v-bind:action="getStoreRoute()" v-bind:on-preview="handlePreview" v-bind:on-remove="handleRemove" v-bind:file-list="fileList" v-bind:on-change="listChanged" v-bind:auto-upload="false" list-type="picture" multiple>
                 <i class="el-icon-upload"></i>
                 <div class="el-upload__text">
                     Drop file here or
@@ -22,7 +22,7 @@
 
             <div class="headline text-xs-center pa-5"></div>
             <v-bottom-nav absolute :value="true" color="transparent">
-                <v-btn flat color="teal" value="favorites">
+                <v-btn flat color="teal" value="favorites" v-on:click="submitUpload">
                     <span>Wyślij</span>
                     <v-icon>backup</v-icon>
                 </v-btn>
