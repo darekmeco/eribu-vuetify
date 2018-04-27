@@ -1,0 +1,67 @@
+<div>
+    <v-toolbar dense>
+        <v-toolbar-side-icon></v-toolbar-side-icon>
+        <v-toolbar-title>Title</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn v-bind:to="{name: 'users.create'}" icon>
+            <v-icon>search</v-icon>
+        </v-btn>
+        <v-btn icon>
+            <v-icon>search</v-icon>
+        </v-btn>
+        <v-btn icon>
+            <v-icon>favorite</v-icon>
+        </v-btn>
+        <v-btn icon>
+            <v-icon>more_vert</v-icon>
+        </v-btn>
+    </v-toolbar>
+    <v-form ref="form">
+        <v-card>
+            <v-container fluid style="min-height: 0;" grid-list-lg>
+                <v-layout row wrap>
+                    <v-flex xs6>
+
+                        <v-text-field label="E-mail" v-bind:error-messages="errors.collect('email')" v-model="form.email" v-validate="'required|email|server:email'" data-vv-name="email">
+                        </v-text-field>
+
+                        <v-text-field label="Imię" v-bind:error-messages="errors.collect('first_name')" v-model="form.first_name" v-validate="'required'" data-vv-name="first_name">
+                        </v-text-field>
+
+                        <v-text-field label="Nazwisko" v-bind:error-messages="errors.collect('last_name')" v-model="form.last_name" v-validate="'required'" data-vv-name="last_name">
+                        </v-text-field>
+
+                        <v-btn v-on:click="onSubmit">
+                            submit
+                        </v-btn>
+                        <v-btn v-on:click="clear">clear</v-btn>
+
+                    </v-flex>
+
+                    <v-flex xs6>
+
+                        <v-text-field label="Hasło" v-bind:error-messages="errors.collect('password')" v-model="form.password" v-validate="'required|min:6|confirmed'" data-vv-name="password" name="password" required>
+                        </v-text-field>
+
+                        <v-text-field label="Powtórz hasło" v-bind:error-messages="errors.collect('password_confirmation')" v-model="form.password_confirmation" v-validate="'required|min:6'" data-vv-name="password_confirmation" name="password_confirmation" required>
+                        </v-text-field>
+                        <v-text-field v-show="true" label="Powtórz hasło" v-model="form.content" v-bind:error-messages="errors.collect('content')" v-validate="'required'" data-vv-name="content" name="content" required class="hidden-input-field hidden-details">
+
+
+                        </v-text-field>
+
+
+                        <quill-editor v-model="form.content" v-bind:error-messages="errors.collect('content')" v-validate="'required'" data-vv-name="content" name="content">
+                        </quill-editor>
+
+                        <v-text-field v-show="true" label="Powtórz hasło" v-model="form.content" v-bind:error-messages="errors.collect('content')" v-validate="'required'" data-vv-name="content" name="content" required class="hidden-input hidden-label">
+
+
+                        </v-text-field>
+
+                    </v-flex>
+                </v-layout>
+            </v-container>
+        </v-card>
+    </v-form>
+</div>
